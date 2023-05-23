@@ -7,7 +7,7 @@ import endpoint.*;
 
 public class ServerApplication{
 	public static void main(String[] args) throws IOException {
-		System.out.println("Iniciando o servidor...");
+		System.out.println("PESQUISA DE PREÇOS - SERVIDOR INICIALIZADO");
 		Endpoint.publish("http://localhost:8081/marketplace", new MarketplaceEndpoint());
 		Endpoint.publish("http://localhost:8081/grocerieslist", new GroceriesListEndpoint());
 		Endpoint.publish("http://localhost:8081/product", new ProductEndpoint());

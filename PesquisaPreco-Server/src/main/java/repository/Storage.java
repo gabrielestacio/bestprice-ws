@@ -38,7 +38,6 @@ public class Storage implements StorageInterface{
     		data = new JSONObject();
     		data.put("mercados", new JSONArray());
     		data.put("produtos", new JSONArray());
-    		data.put("usuarios", new JSONArray());
     		data.put("lista", new JSONArray());
     		writer.write(data.toString());
     		writer.flush();
