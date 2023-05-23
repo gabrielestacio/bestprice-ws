@@ -1,0 +1,47 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>br.ufrn.imd.pd</groupId>
+  <artifactId>pesquisa-preco-client</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <properties>
+	  <project.build.sourceEnconding>UTF</project.build.sourceEnconding>
+  </properties>
+  
+  <build>
+	  <plugins>
+          <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-compiler-plugin</artifactId>
+              <configuration>
+                  <source>1.8</source>
+                  <target>1.8</target>
+              </configuration>
+          </plugin>
+		  <plugin>
+			  <groupId>org.codehaus.mojo</groupId>
+			  <artifactId>jaxws-maven-plugin</artifactId>
+			  <version>2.6</version>
+			  <executions>
+				  <execution>
+					  <phase>generate-sources</phase>
+					  <goals>
+						  <goal>wsimport</goal>
+					  </goals>
+				  </execution>
+			  </executions>
+			  <configuration>
+				  <keep>true</keep>
+				  <packageName>generated.wsimport</packageName>
+				  <sourceDestDir>src/main/java</sourceDestDir>
+				  <wsdlUrls>
+					  <wsdlUrl>http://localhost:8081/marketplace?wsdl</wsdlUrl>
+					  <wsdlUrl>http://localhost:8081/grocerieslist?wsdl</wsdlUrl>
+					  <wsdlUrl>http://localhost:8081/product?wsdl</wsdlUrl>
+					  <wsdlUrl>http://localhost:8081/bestoffers?wsdl</wsdlUrl>
+				  </wsdlUrls>
+			  </configuration>
+		  </plugin>
+	  </plugins>
+  </build>
+</project>

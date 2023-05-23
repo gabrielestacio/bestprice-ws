@@ -31,12 +31,12 @@ public interface MarketplaceEndpoint {
      * @throws IOException_Exception
      */
     @WebMethod
-    @RequestWrapper(localName = "deleteMarket", targetNamespace = "http://endpoint/", className = "generated.wsimport.DeleteMarket")
-    @ResponseWrapper(localName = "deleteMarketResponse", targetNamespace = "http://endpoint/", className = "generated.wsimport.DeleteMarketResponse")
-    @Action(input = "http://endpoint/MarketplaceEndpoint/deleteMarketRequest", output = "http://endpoint/MarketplaceEndpoint/deleteMarketResponse", fault = {
-        @FaultAction(className = IOException_Exception.class, value = "http://endpoint/MarketplaceEndpoint/deleteMarket/Fault/IOException")
+    @RequestWrapper(localName = "registerMarket", targetNamespace = "http://endpoint/", className = "generated.wsimport.RegisterMarket")
+    @ResponseWrapper(localName = "registerMarketResponse", targetNamespace = "http://endpoint/", className = "generated.wsimport.RegisterMarketResponse")
+    @Action(input = "http://endpoint/MarketplaceEndpoint/registerMarketRequest", output = "http://endpoint/MarketplaceEndpoint/registerMarketResponse", fault = {
+        @FaultAction(className = IOException_Exception.class, value = "http://endpoint/MarketplaceEndpoint/registerMarket/Fault/IOException")
     })
-    public void deleteMarket(
+    public void registerMarket(
         @WebParam(name = "arg0", targetNamespace = "")
         Marketplace arg0)
         throws IOException_Exception
@@ -48,12 +48,12 @@ public interface MarketplaceEndpoint {
      * @throws IOException_Exception
      */
     @WebMethod
-    @RequestWrapper(localName = "registerMarket", targetNamespace = "http://endpoint/", className = "generated.wsimport.RegisterMarket")
-    @ResponseWrapper(localName = "registerMarketResponse", targetNamespace = "http://endpoint/", className = "generated.wsimport.RegisterMarketResponse")
-    @Action(input = "http://endpoint/MarketplaceEndpoint/registerMarketRequest", output = "http://endpoint/MarketplaceEndpoint/registerMarketResponse", fault = {
-        @FaultAction(className = IOException_Exception.class, value = "http://endpoint/MarketplaceEndpoint/registerMarket/Fault/IOException")
+    @RequestWrapper(localName = "deleteMarket", targetNamespace = "http://endpoint/", className = "generated.wsimport.DeleteMarket")
+    @ResponseWrapper(localName = "deleteMarketResponse", targetNamespace = "http://endpoint/", className = "generated.wsimport.DeleteMarketResponse")
+    @Action(input = "http://endpoint/MarketplaceEndpoint/deleteMarketRequest", output = "http://endpoint/MarketplaceEndpoint/deleteMarketResponse", fault = {
+        @FaultAction(className = IOException_Exception.class, value = "http://endpoint/MarketplaceEndpoint/deleteMarket/Fault/IOException")
     })
-    public void registerMarket(
+    public void deleteMarket(
         @WebParam(name = "arg0", targetNamespace = "")
         Marketplace arg0)
         throws IOException_Exception

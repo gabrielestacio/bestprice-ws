@@ -45,6 +45,23 @@ public interface GroceriesListEndpoint {
 
     /**
      * 
+     * @param arg0
+     * @throws IOException_Exception
+     */
+    @WebMethod
+    @RequestWrapper(localName = "registerNewGroceriesList", targetNamespace = "http://endpoint/", className = "generated.wsimport.RegisterNewGroceriesList")
+    @ResponseWrapper(localName = "registerNewGroceriesListResponse", targetNamespace = "http://endpoint/", className = "generated.wsimport.RegisterNewGroceriesListResponse")
+    @Action(input = "http://endpoint/GroceriesListEndpoint/registerNewGroceriesListRequest", output = "http://endpoint/GroceriesListEndpoint/registerNewGroceriesListResponse", fault = {
+        @FaultAction(className = IOException_Exception.class, value = "http://endpoint/GroceriesListEndpoint/registerNewGroceriesList/Fault/IOException")
+    })
+    public void registerNewGroceriesList(
+        @WebParam(name = "arg0", targetNamespace = "")
+        List<String> arg0)
+        throws IOException_Exception
+    ;
+
+    /**
+     * 
      * @return
      *     returns java.util.List<java.lang.String>
      * @throws IOException_Exception
@@ -72,23 +89,6 @@ public interface GroceriesListEndpoint {
         @FaultAction(className = IOException_Exception.class, value = "http://endpoint/GroceriesListEndpoint/deleteGroceriesList/Fault/IOException")
     })
     public void deleteGroceriesList(
-        @WebParam(name = "arg0", targetNamespace = "")
-        List<String> arg0)
-        throws IOException_Exception
-    ;
-
-    /**
-     * 
-     * @param arg0
-     * @throws IOException_Exception
-     */
-    @WebMethod
-    @RequestWrapper(localName = "registerNewGroceriesList", targetNamespace = "http://endpoint/", className = "generated.wsimport.RegisterNewGroceriesList")
-    @ResponseWrapper(localName = "registerNewGroceriesListResponse", targetNamespace = "http://endpoint/", className = "generated.wsimport.RegisterNewGroceriesListResponse")
-    @Action(input = "http://endpoint/GroceriesListEndpoint/registerNewGroceriesListRequest", output = "http://endpoint/GroceriesListEndpoint/registerNewGroceriesListResponse", fault = {
-        @FaultAction(className = IOException_Exception.class, value = "http://endpoint/GroceriesListEndpoint/registerNewGroceriesList/Fault/IOException")
-    })
-    public void registerNewGroceriesList(
         @WebParam(name = "arg0", targetNamespace = "")
         List<String> arg0)
         throws IOException_Exception
